@@ -1,24 +1,42 @@
 package com.adrian;
 
-import java.util.Random;
+import java.util.Scanner;
+
+import com.adrian.ejercicios.Bibliotek;
 
 public class Main {
+    final static int maxRange = 10000;
+
     public static void main(String[] args) {
-        Random r = new Random(); 
-        
-        int[] numeros = new int[10000];
-        
-        for(int a=0; a < numeros.length; a++) {
-            numeros[a] = r.nextInt(100);
+        Scanner scan = new Scanner(System.in);
+        boolean flag = true;
+        var biblioteka = new Bibliotek();
+        while (flag) {
+            System.out.println("""
+                    ++++++++++++++  MENU  ++++++++++++++
+                            ** Ingrese la opcion deseada **
+                    1. Listar libros Bibliotek
+                    2. Guardar libros Bibliotek
+                    0. Salir
+                    """);
+            switch (scan.nextInt()) {
+                case 1:
+                    biblioteka.listarLibros();
+                    break;
+                case 2:
+                    biblioteka.guardar(scan);
+                    break;
+                case 0:
+                    // Salir
+                    flag = false;
+
+                    break;
+                default:
+                    System.out.println("Ingrese una opcion valida......\nPresione Enter para continuar.");
+                    scan.nextLine();
+                    break;
+            }
         }
-
-        for(int a=0; a < 10; a++) {
-            int indice = r.nextInt(10000);
-            System.out.println("Oiga el indice es: "+ indice+"  = " + numeros[indice]);
-        }
-
-        // Mostrar un listado de los indices que su valor en el array de
-        // numeros sean menor o igual a 55
-
+        scan.close();
     }
 }
