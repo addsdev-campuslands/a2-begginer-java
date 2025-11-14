@@ -1,10 +1,10 @@
 package com.adrian.ejercicios.pagos;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public abstract class Pago {
     private int valor;
-    private Date fecha;
+    private LocalDate fecha;
     public enum Metodo {
         CREDITO,
         DEBITO,
@@ -14,7 +14,7 @@ public abstract class Pago {
     private Metodo metodo;
     private String referencia;
 
-    public Pago(int valor, Date fecha, String referencia, Metodo metodo ) {
+    public Pago(int valor, LocalDate fecha, String referencia, Metodo metodo ) {
         this.valor = valor;
         this.fecha = fecha;
         this.referencia = referencia;
@@ -31,11 +31,11 @@ public abstract class Pago {
         this.valor = valor;
     }
 
-    public Date getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
