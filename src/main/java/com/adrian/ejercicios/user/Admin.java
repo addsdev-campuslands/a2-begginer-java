@@ -30,6 +30,16 @@ public class Admin extends User{
 
         return super.showInfo() + "\nPermisos: " +showPermissions();
     }
+
+    @Override
+    public void setUsername(String username) {
+        this.username = "ADMIN-"+username;
+    }
+
+    @Override
+    public void setPassword(String password) {
+        this.password = "PASS"+ password;
+    }
     
 
 }
