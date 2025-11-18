@@ -12,7 +12,7 @@ public abstract class PagoPSE extends Pago {
         this.entidadBancaria = entidadBancaria;
     }
 
-     @Override
+    @Override
     public String informacion() {
         StringBuilder info = new StringBuilder();
         info.append("Referencia: " + getReferencia());
