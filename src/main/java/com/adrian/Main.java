@@ -18,6 +18,7 @@ public class Main {
 
         List<Figura> shapes = new ArrayList<>();
 
+
         while (flag) {
             System.out.println("""
                     ++++++++++++++  MENU  ++++++++++++++
@@ -47,7 +48,7 @@ public class Main {
                     break;
                 case 1:
                     System.out.println("-----------------------FIGURAS-----------------------");
-                    for (Figura fig : shapes) {
+                    shapes.forEach( fig -> {
                         System.out.println(fig.getNombre().toUpperCase());
                         if (fig instanceof IArea) {
                             var area = (IArea) fig;
@@ -55,7 +56,7 @@ public class Main {
                         }
 
                         System.out.println("------------------------------------------------------\n");
-                    }
+                    });
                     System.out.println("-------------------------FIN--------------------------");
                     break;
                 case 0:
