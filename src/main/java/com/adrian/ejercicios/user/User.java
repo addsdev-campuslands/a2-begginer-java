@@ -25,6 +25,10 @@ public abstract class User {
         return this.password.equals(password);
     }
 
+     public String getUserName() {
+        return username;
+    }
+
     public String showInfo() {
         return "Nombre de usuario: " + username;
     }

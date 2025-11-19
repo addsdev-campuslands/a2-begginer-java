@@ -1,11 +1,12 @@
 package com.adrian.ejercicios.user;
 
 public class Admin extends User{
-    //private String username, password;
+    //private String username;//, password;
     private String[] permissions;
 
-    public Admin() {
-        super("root","123");
+    public Admin(String username) {
+        super(username,"123");
+        this.username = username;
     }
 
     public void setPermissions(String[] permissions) {
